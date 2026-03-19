@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World | My First Deployment</title>
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --secondary: #4169e1;
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(138, 43, 226, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(65, 105, 225, 0.15) 0px, transparent 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem 4rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a78bfa, #818cf8, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(90deg, rgba(138,43,226,0.2), rgba(65,105,225,0.2));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(138, 43, 226, 0.3);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            0% { filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.2)); }
+            100% { filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.5)); }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><circle cx="150" cy="150" r="1.5" fill="rgba(255,255,255,0.2)"/></svg>') repeat;
+            animation: twinkle 4s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="card">
+        <h1>Hello, World!</h1>
+        <p>My very first Vercel deployment, styled perfectly.</p>
+        <div class="badge">Live on the Web</div>
+    </div>
+</body>
+</html>
